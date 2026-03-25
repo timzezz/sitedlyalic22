@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Образовательный портал</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Образовательный<span>      	портал</span></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('theory',this)">📚 Теория</button>
+    <button class="nav-tab" onclick="showPage('quiz',this)">🎯 Тест</button>
+    <button class="nav-tab" onclick="showPage('practice',this)">🔧 Практика</button>
+  </div>
+  <button class="theme-btn" onclick="toggleTheme()" title="Сменить тему">🌙</button>
+</nav>
+
+<main>
+
+<div class="page active" id="page-theory">
+  <div class="hero">
+    <div class="hero-tag">ОГЭ · Информатика · Математика</div>
+    <h1>Учебные <em>материалы</em></h1>
+    <p>Все необходимые теоремы, формулы и концепции в одном месте.</p>
+  </div>
+
+  <div class="section-grid">
+
+    <div class="section-card card--math">
+      <div class="card-header">
+        <span class="card-icon">📐</span>
+        <span class="card-title">Математика</span>
+        <span class="card-badge">4 темы</span>
+      </div>
+      <div class="card-body">
+        <div class="term-list">
+          <div class="term-item">
+            <span class="term-key">Вероятность</span>
+            <span class="term-val">Число от 0 до 1. P=0 — невозможное, P=1 — достоверное событие.</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">Факториал</span>
+            <span class="term-val">n! = 1·2·3·…·n, причём 0! = 1</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">Комбинаторика</span>
+            <span class="term-val">C(n,k) = n! / (k! · (n−k)!) — число сочетаний</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">Бернулли</span>
+            <span class="term-val">Вероятность ровно k успехов в n испытаниях</span>
+          </div>
+        </div>
+        <div class="formula-box">
+          <span class="f-label">Формула Бернулли</span>
+          P(k) = C(n,k) · pᵏ · (1−p)ⁿ⁻ᵏ
+        </div>
+        <div class="formula-box" style="margin-top:.75rem">
+          <span class="f-label">Комбинаторика</span>
+          C(n,k) = n! / ( k! · (n−k)! )
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card card--cs">
+      <div class="card-header">
+        <span class="card-icon">💻</span>
+        <span class="card-title">Информатика</span>
+        <span class="card-badge">4 темы</span>
+      </div>
+      <div class="card-body">
+        <div class="term-list">
+          <div class="term-item">
+            <span class="term-key">HTML</span>
+            <span class="term-val">Язык разметки — структура веб-страницы</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">CSS</span>
+            <span class="term-val">Каскадные таблицы стилей — оформление</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">JavaScript</span>
+            <span class="term-val">Язык программирования — логика и интерактивность</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">Алгоритм</span>
+            <span class="term-val">Точная конечная последовательность действий для решения задачи</span>
+          </div>
+        </div>
+        <div class="formula-box" style="margin-top:.75rem">
+          <span class="f-label">Принцип разделения</span>
+          HTML + CSS + JS = Структура + Стиль + Поведение
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card card--logic">
+      <div class="card-header">
+        <span class="card-icon">🧠</span>
+        <span class="card-title">Алгебра логики</span>
+        <span class="card-badge">3 операции</span>
+      </div>
+      <div class="card-body">
+        <div class="term-list">
+          <div class="term-item">
+            <span class="term-key">И (AND)</span>
+            <span class="term-val">Результат 1, только если оба операнда равны 1</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">ИЛИ (OR)</span>
+            <span class="term-val">Результат 1, если хотя бы один операнд равен 1</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">НЕ (NOT)</span>
+            <span class="term-val">Инверсия: 1→0, 0→1</span>
+          </div>
+        </div>
+        <table class="logic-table" style="margin-top:1rem">
+          <tr><th>A</th><th>B</th><th>A AND B</th><th>A OR B</th><th>NOT A</th></tr>
+          <tr><td class="val-0">0</td><td class="val-0">0</td><td class="val-0">0</td><td class="val-0">0</td><td class="val-1">1</td></tr>
+          <tr><td class="val-0">0</td><td class="val-1">1</td><td class="val-0">0</td><td class="val-1">1</td><td class="val-1">1</td></tr>
+          <tr><td class="val-1">1</td><td class="val-0">0</td><td class="val-0">0</td><td class="val-1">1</td><td class="val-0">0</td></tr>
+          <tr><td class="val-1">1</td><td class="val-1">1</td><td class="val-1">1</td><td class="val-1">1</td><td class="val-0">0</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card card--encoding">
+      <div class="card-header">
+        <span class="card-icon">📊</span>
+        <span class="card-title">Кодирование</span>
+        <span class="card-badge">3 правила</span>
+      </div>
+      <div class="card-body">
+        <div class="term-list">
+          <div class="term-item">
+            <span class="term-key">1 байт = 8 бит</span>
+            <span class="term-val">Базовая единица хранения информации</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">Объём сообщения</span>
+            <span class="term-val">Кол-во символов × кол-во бит на символ</span>
+          </div>
+          <div class="term-item">
+            <span class="term-key">Равномерное <br> кодирование</span>
+            <span class="term-val">Все символы кодируются одинаковым числом бит</span>
+          </div>
+        </div>
+        <div class="formula-box" style="margin-top:.75rem">
+          <span class="f-label">Пример: 100 символов × 8 бит</span>
+          100 × 8 = 800 бит = 100 байт
+          <br>
+          <span style="color:var(--text-dim);font-size:.75rem">1 КБ = 1024 Б · 1 МБ = 1024 КБ</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="page" id="page-quiz">
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h2>🎯 Тест по материалу</h2>
+      <p id="quiz-subtitle">10 вопросов по всем разделам</p>
+    </div>
+
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+
+    <div id="quiz-questions"></div>
+
+    <div class="result-screen" id="result-screen">
+      <div class="result-stars" id="result-stars"></div>
+      <div class="result-score" id="result-score"></div>
+      <div class="result-label" id="result-label"></div>
+      <button class="btn-restart" onclick="restartQuiz()">🔄 Пройти заново</button>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-practice">
+  <div class="hero" style="padding-top:1rem;padding-bottom:1rem">
+    <h2 style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800">🔧 Практика</h2>
+    <p>Интерактивные калькуляторы для отработки навыков.</p>
+  </div>
+
+  <div class="practice-grid">
+
+    <div class="practice-card">
+      <div class="pcard-header">
+        <span>📐</span>
+        <span class="pcard-title">Факториал и сочетания</span>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-desc">Вычисли n! и C(n, k) — число сочетаний из n по k.</p>
+        <div class="form-group">
+          <label class="form-label">n =</label>
+          <div class="calc-row">
+            <input class="calc-input" type="number" id="fact-n" min="0" max="20" placeholder="Введи n" value="5">
+            <button class="calc-btn" onclick="calcFactorial()">n!</button>
+          </div>
+        </div>
+        <div class="calc-result" id="fact-result">Введи n и нажми n!</div>
+        <div class="form-group" style="margin-top:.75rem">
+          <label class="form-label">C(n, k):</label>
+          <div class="calc-row">
+            <input class="calc-input" type="number" id="comb-k" min="0" max="20" placeholder="k =" value="2">
+            <button class="calc-btn secondary" onclick="calcCombination()">C(n,k)</button>
+          </div>
+        </div>
+        <div class="calc-result" id="comb-result">Введи k и нажми C(n,k)</div>
+      </div>
+    </div>
+
+    <div class="practice-card">
+      <div class="pcard-header">
+        <span>🎲</span>
+        <span class="pcard-title">Формула Бернулли</span>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-desc">P(k) = C(n,k) · p^k · (1−p)^(n−k)</p>
+        <div class="enc-grid">
+          <div class="enc-row">
+            <label class="enc-label">n (испытания)</label>
+            <input class="calc-input" type="number" id="ber-n" min="1" max="30" value="5" placeholder="n">
+          </div>
+          <div class="enc-row">
+            <label class="enc-label">k (успехи)</label>
+            <input class="calc-input" type="number" id="ber-k" min="0" max="30" value="2" placeholder="k">
+          </div>
+          <div class="enc-row" style="margin-top:.5rem">
+            <label class="enc-label">p (вероятность)</label>
+            <input class="calc-input" type="number" id="ber-p" min="0" max="1" step="0.01" value="0.5" placeholder="0..1">
+          </div>
+        </div>
+        <button class="calc-btn" style="width:100%;margin-top:.75rem;margin-bottom:.75rem" onclick="calcBernoulli()">Вычислить P(k)</button>
+        <div class="calc-result" id="ber-result">Заполни поля и нажми кнопку</div>
+        <div class="score-row" id="ber-steps"></div>
+      </div>
+    </div>
+
+    <div class="practice-card">
+      <div class="pcard-header">
+        <span>📊</span>
+        <span class="pcard-title">Битовый конвертер</span>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-desc">Нажимай на биты, чтобы включать/выключать. Смотри десятичное значение байта.</p>
+        <div class="bits-display" id="bits-display"></div>
+        <div style="display:flex;gap:1rem;align-items:center;margin-bottom:.75rem">
+          <span style="font-size:.8rem;color:var(--text-dim)">Десятичное:</span>
+          <span class="bit-value" id="bit-decimal">0</span>
+          <span style="font-size:.8rem;color:var(--text-dim);margin-left:.5rem">Двоичное:</span>
+          <span class="bit-value" id="bit-binary" style="color:var(--accent3)">00000000</span>
+        </div>
+        <div style="display:flex;gap:.5rem">
+          <button class="calc-btn secondary" style="flex:1" onclick="resetBits()">Сброс</button>
+          <button class="calc-btn" style="flex:1" onclick="randomBits()">Случайный</button>
+        </div>
+        <div style="margin-top:.75rem;font-size:.78rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace">
+          1 байт = 8 бит · макс. значение = 255
+        </div>
+      </div>
+    </div>
+
+    <div class="practice-card">
+      <div class="pcard-header">
+        <span>🧠</span>
+        <span class="pcard-title">Логический калькулятор</span>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-desc">Вычисли AND, OR, NOT для двух значений.</p>
+        <div class="tt-inputs">
+          <select class="tt-sel" id="logic-a">
+            <option value="1">A = 1</option>
+            <option value="0">A = 0</option>
+          </select>
+          <select class="tt-sel" id="logic-b">
+            <option value="1">B = 1</option>
+            <option value="0">B = 0</option>
+          </select>
+          <button class="calc-btn" onclick="calcLogic()">Вычислить</button>
+        </div>
+        <div id="logic-results" style="display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem"></div>
+        <div style="margin-top:1rem">
+          <p class="pcard-desc" style="margin-bottom:.5rem">Задача с кодированием:</p>
+          <div class="enc-grid">
+            <label class="enc-label">Символов</label>
+            <input class="calc-input" id="enc-chars" type="number" value="100" min="1">
+            <label class="enc-label" style="margin-top:.4rem">Бит на символ</label>
+            <input class="calc-input" id="enc-bits" type="number" value="8" min="1" style="margin-top:.4rem">
+          </div>
+          <button class="calc-btn secondary" style="width:100%;margin-top:.6rem" onclick="calcEncoding()">Вычислить объём</button>
+          <div class="calc-result" id="enc-result" style="margin-top:.5rem">Заполни поля</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<script src="js.js"></script>
+</body>
+</html>
